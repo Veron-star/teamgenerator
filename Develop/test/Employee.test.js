@@ -28,7 +28,7 @@ descripe("getName", () => {
   it("Can get name via getName()", () => {
     const testValue = "Alice";
     const e = new Employee(testValue);
-    expect(e.getName).toBe(testValue);
+    expect(e.getName()).toBe(testValue);
 });
 });
 
@@ -36,7 +36,7 @@ describe("getID", () => {
   it("Can get id via getID()", () => {
     const testValue = 100;
     const e = new Employee("Foo", testValue);
-    expect(e.getID).toBe(testValue);
+    expect(e.getID()).toBe(testValue);
 });
 });
 
@@ -44,7 +44,7 @@ describe("getEmail", () => {
   it("Can get email via getEmail()", () => {
     const testValue = "test@test.com";
     const e = new Employee("Foo", 1, testValue);
-    expect(e.getEmail).toBe(testValue);
+    expect(e.getEmail()).toBe(testValue);
 });
 });
 
