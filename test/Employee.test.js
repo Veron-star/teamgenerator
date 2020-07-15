@@ -32,11 +32,11 @@ describe("getName", () => {
 });
 });
 
-describe("getID", () => {
-  it("Can get id via getID()", () => {
+describe("getId", () => {
+  it("Can get id via getId()", () => {
     const testValue = 100;
     const e = new Employee("Foo", testValue);
-    expect(e.getID()).toBe(testValue);
+    expect(e.getId()).toBe(testValue);
 });
 });
 
