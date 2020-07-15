@@ -24,7 +24,7 @@ describe("Employee", () => {
     expect(e.email).toBe(testValue);
 });
 
-descripe("getName", () => {
+describe("getName", () => {
   it("Can get name via getName()", () => {
     const testValue = "Alice";
     const e = new Employee(testValue);
