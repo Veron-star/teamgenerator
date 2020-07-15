@@ -57,10 +57,10 @@ function addMember() {
                 "Yes",
                 "No"
             ],
-            name: "addMember"
+            name: "moreMember"
         }])
 
-        .then(function({roleInfo, addMember}) {
+        .then(function({roleInfo, moreMember}) {
             let newMember;
             if (role === "Engineer") {
                 newMember = new Engineer(name, id, email, roleInfo);
@@ -72,8 +72,8 @@ function addMember() {
             employee.push(newMember);
             addHtml(newMember)
             .then(function() {
-                if (addMember === "Yes") {
-                    moreMember();
+                if (moreMember === "Yes") {
+                    addMember();
                 } else {
                     finishHtml();
                 }
