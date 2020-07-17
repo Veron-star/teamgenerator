@@ -2,12 +2,15 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
+const outputPath = path.join(OUTPUT_DIR, "team.html");
+const render = require("./lib/htmlRenderer");
 
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern");
 
 const teamMember = [];
+
 function initApp() {
     function getManager() {
         inquirer.prompt([{
@@ -81,8 +84,8 @@ function initApp() {
         const intern = new Intern(response.internName, response.internId, response.internEmail, response.internSchool);
         teamMember.push(intern);
         addNewMember();
-    })
-    }
+    });
+    };
 
     function addNewMember() {
         inquirer.prompt([{
@@ -105,18 +108,18 @@ function initApp() {
         } else if (role == "Intern") {
             getIntern();
         } else {
-            htmlPage();
+            console.log("Team profile created.");
+            renderEmployee(teamMember);
         }
     });
     }
     addNewMember();
     }
 
-    
-    function htmlPage() {
-        let html = fs.readFileSync("./lib/htmlRenderer.js");
-        const outputPath = path.join(OUTPUT_DIR, "team.html");
-        fs.writeFileSync(outputPath, html, "utf-8");
+   
+    function renderEmployee(teamMember) {
+        const renderHtml = render(teamMember);
+        fs.writeFileSync(outputPath, renderHtml, "utf8");
     }   
     
 initApp();
