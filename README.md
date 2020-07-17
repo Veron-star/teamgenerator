@@ -16,6 +16,7 @@ Mix of team members information were provided to generate a HTML page to display
 ## Demo:
 [Demonstration] https://drive.google.com/file/d/11IuGfRjyFuolYFO3Yh-BaxTJFzzRHfmD/view
 
+![](/screenshot.PNG)
 
 
     
